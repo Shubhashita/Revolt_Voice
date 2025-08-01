@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rev - Revolt Motors Voice Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo-placeholder">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h1>Rev</h1>
+                <p class="tagline">Your Revolt Motors AI Assistant</p>
+            </div>
+        </header>
+
+        <!-- Main Chat Interface -->
+        <main class="chat-interface">
+            <div class="chat-container">
+                <div class="messages" id="messages">
+                    <div class="message ai-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hi! I'm Rev, your Revolt Motors assistant. I can help you learn about our electric
+                                motorcycles, pricing, features, and more. Click the microphone to start talking!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice Controls -->
+                <div class="voice-controls">
+                    <div class="connection-status" id="connectionStatus">
+                        <span class="status-indicator disconnected"></span>
+                        <span class="status-text">Connecting...</span>
+                    </div>
+
+                    <div class="audio-visualizer" id="audioVisualizer">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="control-buttons">
+                        <button class="mic-button" id="micButton">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="stop-button" id="stopButton" style="display: none;">
+                            <i class="fas fa-stop"></i>
+                        </button>
+                    </div>
+
+                    <div class="voice-status" id="voiceStatus">
+                        <p>Click the microphone to start voice chat</p>
+                    </div>
+                </div>
+
+                <!-- Text Input Alternative -->
+                <div class="text-input-section">
+                    <div class="input-group">
+                        <input type="text" id="textInput" placeholder="Or type your message here..." maxlength="500">
+                        <button id="sendButton">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Features Info -->
+        <section class="features-info">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3>Voice Chat</h3>
+                    <p>Natural conversation with interruption support</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Multi-language</h3>
+                    <p>Speaks both English and Hindi</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Electric Focus</h3>
+                    <p>Specialized in Revolt Motors products</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Low Latency</h3>
+                    <p>Quick responses for smooth conversation</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Revolt Motors. Powered by Gemini Live API.</p>
+            <div class="footer-links">
+                <a href="https://www.revoltmotors.com" target="_blank">Visit Website</a>
+                <a href="#" onclick="showHelp()">Help</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Initializing AI Assistant...</p>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div class="modal" id="helpModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeHelp()">&times;</span>
+            <h2>How to Use Rev Voice Assistant</h2>
+            <div class="help-content">
+                <div class="help-item">
+                    <i class="fas fa-microphone"></i>
+                    <div>
+                        <h4>Start Voice Chat</h4>
+                        <p>Click the microphone button and start speaking naturally</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <i class="fas fa-hand-paper"></i>
+                    <div>
+                        <h4>Interrupt Anytime</h4>
+                        <p>You can interrupt Rev while speaking by just talking</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <i class="fas fa-keyboard"></i>
+                    <div>
+                        <h4>Text Alternative</h4>
+                        <p>Use the text input box if you prefer typing</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <i class="fas fa-motorcycle"></i>
+                    <div>
+                        <h4>Ask About Bikes</h4>
+                        <p>Ask about RV1, RV400, RV BlazeX, pricing, features, and more</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
